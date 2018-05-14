@@ -1,0 +1,18 @@
+<mat-tab-group>
+  <mat-tab label="{{tabOneLabel}}">
+    <h1>{{tabOneContent}}</h1>
+  </mat-tab>
+  <mat-tab label="{{tabTwoLabel}}">
+    <mat-form-field>
+      <input matInput placeholder="email" [(ngModel)] = "user.email">
+    </mat-form-field>
+    <mat-list>
+      <mat-list-item *ngFor="let launch of launches">
+        <p matLine>Rocket ID: {{launch.rocket.rocket_id}}</p>
+        <p matLine>Flight number: {{launch.rocket.first_stage.cores[0].flight}}</p>
+        <p matLine>Payload ID: {{launch.rocket.second_stage.payloads[0].payload_id}}</p>
+      </mat-list-item>
+     </mat-list>
+     <button mat-button (click)="navigateToPage2()">Page 2</button>
+  </mat-tab>
+</mat-tab-group>
